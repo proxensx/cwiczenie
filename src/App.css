@@ -4,3 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+
+body{
+  flex: 1;
+  display: flex;
+}
+
+main{
+  flex: 1;
+}
