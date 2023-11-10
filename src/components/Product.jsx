@@ -2,9 +2,9 @@ import "./Product.scss"
 
 const Product = (props) => {
     const { product } = props;
-    const {name, price, description, imageUrl} = product;
+    const { name, price, description, imageUrl } = product;
     return(
-        <article>
+        <article className="product">
             <div>
                 <img src={imageUrl} alt={name} />
             </div>
@@ -16,7 +16,7 @@ const Product = (props) => {
                 </header>
                 <section>
                     <strong>{price}</strong>
-                    <button></button>
+                    <button type="button"></button>
                 </section>
             </div>
         </article>
