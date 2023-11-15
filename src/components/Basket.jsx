@@ -3,13 +3,16 @@ import BasketItem from "./BasketItem";
 
 const Basket = (props) => {
   const { orderedProducts } = props;
+  const totalCost = orderedProducts.reduce(
+    (acc, orderedProduct) => acc + orderedProduct.price, 0
+  );
 
   return (
     <div className="basket">
       <header>
         <h5>
           <span>Basket</span>
-          <span>(0 products)</span>
+          <span>({orderedProducts.length} products)</span>
         </h5>
         <button>X</button>
       </header>
@@ -21,7 +24,7 @@ const Basket = (props) => {
         </ul>
       </div>
       <footer>
-        <button>Order and Pay (0.00)</button>
+        <button>Order and Pay ({totalCost.toFixed(2)})</button>
       </footer>
     </div>
   );

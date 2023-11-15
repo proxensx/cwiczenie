@@ -1,0 +1,16 @@
+.basket {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 24px;
+    width: 360px;
+    max-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    gap: 1rem;
+    border: 1px solid #d2db9b;
+    & > header {
+        
+    }
+}
