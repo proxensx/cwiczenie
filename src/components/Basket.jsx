@@ -2,11 +2,13 @@ import "./Basket.scss";
 import BasketItem from "./BasketItem";
 
 const Basket = (props) => {
-  const { orderedProducts } = props;
+  const { orderedProducts, onProductRemove } = props;
   const totalCost = orderedProducts.reduce(
     (acc, orderedProduct) => acc + orderedProduct.price, 0
   );
-
+  const handleProductRemove = (orderedProduct) => {
+    onProductRemove(orderedProduct);
+  };
   return (
     <div className="basket">
       <header>
@@ -19,7 +21,7 @@ const Basket = (props) => {
       <div>
         <ul>
           {orderedProducts.map((orderedProduct) => (
-            <BasketItem orderedProduct={orderedProduct} />
+            <BasketItem orderedProduct={orderedProduct} onProductRemove={handleProductRemove}/>
           ))}
         </ul>
       </div>

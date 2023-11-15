@@ -11,6 +11,19 @@
     gap: 1rem;
     border: 1px solid #d2db9b;
     & > header {
-        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h5 {
+            display: flex;
+            gap: 4px;
+        }
+    }
+    & > div {
+        & > ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
     }
 }

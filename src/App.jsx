@@ -10,10 +10,12 @@ function App() {
   const handleProductSelect = (product) => {
     setOrderedProducts([...orderedProducts, product]);
   };
-
+  const handleProductRemove = (orderedProduct) => {
+    setOrderedProducts(orderedProducts.filter(product => product.id !== orderedProduct.id))
+  }
   return (
     <>
-      <Basket orderedProducts={orderedProducts} />
+      <Basket orderedProducts={orderedProducts} onProductRemove={handleProductRemove}/>
       <main>
         <header>
           <h1>Welcome!</h1>

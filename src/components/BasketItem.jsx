@@ -1,7 +1,9 @@
 export default function Basketitem(props) {
-    const { orderedProduct } = props;
+    const { onProductRemove, orderedProduct } = props;
     const { name, price } = orderedProduct;
-  
+    const handleButtonClick = () => {
+      onProductRemove(orderedProduct);
+    };
     return (
       <li className="basket-item">
         <div className="info">
@@ -10,7 +12,7 @@ export default function Basketitem(props) {
           <span>{price}</span>
         </div>
         <div className="actions">
-          <button type="button">Remove</button>
+          <button type="button" onClick={handleButtonClick}>Remove</button>
         </div>
       </li>
     );
