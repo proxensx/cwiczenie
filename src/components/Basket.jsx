@@ -1,14 +1,25 @@
-import "./Basket.scss";
+import { groupBy } from "../utils";
 import BasketItem from "./BasketItem";
+import "./Basket.scss";
 
 const Basket = (props) => {
   const { orderedProducts, onProductRemove } = props;
+
   const totalCost = orderedProducts.reduce(
-    (acc, orderedProduct) => acc + orderedProduct.price, 0
+    (acc, orderedProduct) => acc + orderedProduct.price,
+    0
   );
+
+  const groupedOrderedProducts = Object.entries(
+    groupBy(orderedProducts, (product) => product.name)
+  );
+
+  console.log(groupedOrderedProducts);
+
   const handleProductRemove = (orderedProduct) => {
     onProductRemove(orderedProduct);
   };
+
   return (
     <div className="basket">
       <header>
@@ -20,8 +31,12 @@ const Basket = (props) => {
       </header>
       <div>
         <ul>
-          {orderedProducts.map((orderedProduct) => (
-            <BasketItem orderedProduct={orderedProduct} onProductRemove={handleProductRemove}/>
+          {groupedOrderedProducts.map(([name, orderedProducts]) => (
+            <BasketItem
+              orderedProduct={orderedProducts[0]}
+              orderCount={orderedProducts.length}
+              onProductRemove={handleProductRemove}
+            />
           ))}
         </ul>
       </div>

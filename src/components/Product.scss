@@ -7,6 +7,10 @@
   gap: 0.75rem;
   border: 2px solid transparent;
 
+  &[data-ordered="true"] {
+    border-color: #8ea604;
+  }
+
   &:hover {
     box-shadow: 0 20px 44px #80574d0f;
     cursor: pointer;
@@ -24,6 +28,7 @@
       height: 104px;
     }
   }
+
 
   & > div:last-child {
     flex: 1;
