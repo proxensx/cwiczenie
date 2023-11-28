@@ -1,9 +1,10 @@
-
 .product-modal {
     position: fixed;
+    border-radius: 12px;
 }
 
 .product-modal-window {
+    text-align: center;
     overflow-y: scroll;
     background-color: white;
     width: 700px;

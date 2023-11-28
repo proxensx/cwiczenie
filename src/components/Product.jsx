@@ -33,10 +33,10 @@ const Product = (props) => {
         <footer>
           <strong>{price}</strong>
           <button onClick={handleButtonClick}>
-           {isOrdered ? orderCount : "+"} 
+            {isOrdered ? orderCount : "+"}
           </button>
         </footer>
-        {showModal && <ProductModal product={product} hide={() => setShowModal(false)}/>}
+        {showModal && <ProductModal product={product} hide={() => setShowModal(false)} />}
       </div>
     </article>
   );

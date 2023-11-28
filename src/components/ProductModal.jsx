@@ -3,7 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const ProductModal = (props) => {
-    const { product, show, hide } = props;
+    const { product, hide } = props;
     return (
         <div className="product-modal">
             <div className="product-modal-window">
