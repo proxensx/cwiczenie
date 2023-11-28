@@ -1,6 +1,8 @@
 import "./ProductModal.scss"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { MdArrowBack } from "react-icons/md";
+import { MdFavorite } from "react-icons/md";
 
 const ProductModal = (props) => {
     const { product, hide } = props;
@@ -11,7 +13,9 @@ const ProductModal = (props) => {
                 <h4>{product.name}</h4>
                 <p>{product.description}</p>
                 <strong>{product.price}</strong>
-                <button onClick={hide}>Zamknij</button> 
+                <button className="back-button" onClick={hide}><MdArrowBack /></button> 
+                <button className="favorite-button"><MdFavorite /></button>
+                <button className="order-button">DODAJ DO KOSZYKA {product.price}</button>
             </div>
         </div>
     );

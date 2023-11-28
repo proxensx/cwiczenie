@@ -1,6 +1,6 @@
 .product-modal {
     position: fixed;
-    border-radius: 12px;
+    display: flex;
 }
 
 .product-modal-window {
@@ -9,4 +9,30 @@
     background-color: white;
     width: 700px;
     height: 600px;
+    .back-button {
+        position: absolute;
+        top: 10px;
+        right: 650px;
+        background-color: transparent;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .favorite-button {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        background-color: transparent;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .order-button {
+        background-color: #0ec554;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }
+
